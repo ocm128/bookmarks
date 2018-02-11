@@ -32,13 +32,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+
+    # It must be BEFORE django.contrib.admin because the Django template loader
+    # will use the first template that it finds.
+    'account',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account',
 ]
 
 MIDDLEWARE = [
@@ -121,8 +124,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
-
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
+
+# Indicates the class to use to send e-mails to the console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
