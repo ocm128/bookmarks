@@ -35,9 +35,6 @@ ol {
     line-height:1.5;
 }
 
-.content{
-    margin: 25px;
-}
 
 #header {
     padding:10px 100px;
@@ -88,6 +85,11 @@ ol {
     padding:30px 100px;
 }
 
+/* ADDED LATER */
+.content{
+    margin: 25px;
+}
+
 /* forms */
 form {
     overflow:auto;
@@ -102,10 +104,15 @@ label {
     float:left;
     clear:both;
     color:#333;
-    margin-bottom:4px;
+    /*margin-bottom:4px;*/
+    margin-bottom: 2px;
+
+    display: inline-block;
+    width: 182px;
+    text-align: left;
 }
 input, textarea {
-    clear:both;
+    /*clear:both;*/
     float:left;
     margin:0 0 10px;
     background:#efefef;
