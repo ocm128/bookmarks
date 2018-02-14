@@ -124,6 +124,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+# Base URL to serve the media files uploaded by users
+MEDIA_URL = '/media/'
+
+# Local path where reside the files uploaded by users
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
