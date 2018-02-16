@@ -139,3 +139,11 @@ LOGOUT_URL = reverse_lazy('logout')
 # Indicates the class to use to send e-mails to the console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+
+# Django will try to authenticate the user against each of the backends.
+# The default ModelBackend is used to authenticate with username and password
+# EmailAuthBackend is a custom authenticate backend class
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+)
