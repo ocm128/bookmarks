@@ -35,6 +35,7 @@ INSTALLED_APPS = [
 
     # It must be BEFORE django.contrib.admin because the Django template loader
     # will use the first template that it finds.
+    'images',
     'account',
     'django.contrib.admin',
     'django.contrib.auth',
