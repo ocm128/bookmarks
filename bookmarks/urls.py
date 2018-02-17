@@ -21,6 +21,8 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^account/', include('account.urls')),
+    url(r'^social-auth/', include('social_django.urls', namespace='social')),
+
 ]
 
 # Allow to serve the media files during development

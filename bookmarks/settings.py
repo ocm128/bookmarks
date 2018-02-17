@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django', # social-auth-app-django
 ]
 
 MIDDLEWARE = [
@@ -146,4 +147,18 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
+    #'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.twitter.TwitterOAuth',
 )
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1045719785444394'
+SOCIAL_AUTH_FACEBOOK_SECRET = '1637d7bfd47170461626f8c7390325a2'
+
+SOCIAL_AUTH_TWITTER_KEY = 'rpZvjHwhMSXyRIH4Tp4dpVBcB'
+SOCIAL_AUTH_TWITTER_SECRET = 'Y7e5ZRnITOfvwYYH39LBtGRdazvlUWa546868PAxBQkPOZvgyn'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '223097982324-9ke11046lbngmefal937ftjc9bboul75.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'm6mlacFIUh-H-p8QxZtOmftY'
