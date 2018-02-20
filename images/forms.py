@@ -48,6 +48,7 @@ class ImageCreateForm(forms.ModelForm):
             # but with save=False to avoid saving the object to db yet.
             image.image.save(image_name, ContentFile(response.read()),
                  save=False)
+
             if commit:
                 image.save()
             return image

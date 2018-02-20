@@ -19,7 +19,7 @@ class Image(models.Model):
 
     # auto_now_add, this datetime is automatically set when the object is created
     # db_index=True, Django creates an index in the db for this field
-    created = models.DateField(auto_now_add=True, db_index=True)
+    created = models.DateTimeField(auto_now_add=True, db_index=True)
 
     # A user might like multiple images and each image can be liked by
     # multiple users.
@@ -34,7 +34,7 @@ class Image(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
-            super(Image, self).save(*args, **kwargs)
+        super(Image, self).save(*args, **kwargs)
 
 
     def get_absolute_url(self):
